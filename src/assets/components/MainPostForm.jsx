@@ -12,16 +12,20 @@ function MainPostForm() {
         }
     )
 
+    /***************
+        RENDERING
+    ****************/ 
     return(
-        <main>
+        <main className="container">
             <div className="container-form">
 
                 {/* FORM */}
-                <form onSubmit={GestioneinvioForm}>
+                <form onSubmit={GestioneinvioForm} className="form-flex">
 
                     {/* Autore Post*/}
-                    <div>
+                    <div className="margin-bottom-20">
                         <label htmlFor="author"> Autore </label>
+                        <br/>
                         <input
                             type="text"
                             name="author"
@@ -34,8 +38,9 @@ function MainPostForm() {
                     </div>
 
                     {/* Titolo Post */}
-                    <div>
+                    <div className="margin-bottom-20">
                         <label htmlFor="title"> Titolo </label>
+                        <br/>
                         <input
                             type="text"
                             name="title"
@@ -48,8 +53,9 @@ function MainPostForm() {
                     </div>
 
                     {/* Testo Post */}
-                    <div>
+                    <div className="margin-bottom-20">
                         <label htmlFor="body"> Testo </label>
+                        <br/>
                         <textarea
                             name="body"
                             value={formData.body}
@@ -61,7 +67,7 @@ function MainPostForm() {
                     </div>
 
                     {/* Checkbox pubblicazione Post */}
-                    <div>
+                    <div className="pubblica-testo">
                         <label htmlFor="public"> Pubblica testo </label>
                         <input
                             type="checkbox"
@@ -73,7 +79,7 @@ function MainPostForm() {
                     </div>
 
                     {/* Bottone invio */}
-                    <button type="submit"> Crea Post </button>
+                    <button type="submit"> INVIO </button>
 
                 </form>
             </div>
@@ -90,8 +96,25 @@ function MainPostForm() {
         e.preventDefault();
 
         axios.post("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", formData)
-            .then(risInvioForm => console.log("dati inviati", risInvioForm.data))
-            .catch(error => console.log(error))
+            .then ( risInvioForm => {
+
+                // Mostra un messaggio di conferma
+                alert("Post inviato con successo!");
+
+                 // Reset dei campi del form dopo l’invio
+                setFormData( {
+                    author: "",
+                    title: "",
+                    body: "",
+                    public: false
+                })
+            })
+
+            .catch(error => {
+                // Messaggio in caso di errore
+                alert("Si è verificato un errore durante l'invio del post!");
+            })
+
     }
 
     // funzione per la gestione dei campi input

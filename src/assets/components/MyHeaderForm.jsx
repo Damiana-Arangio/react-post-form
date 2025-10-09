@@ -1,7 +1,7 @@
 function MyHeaderForm() {
     return(
         <header>
-            <h1> Pubblicazione Post </h1>
+            <h1> Crea il tuo post </h1>
         </header>
     )
 }

@@ -1,5 +1,91 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/**********************
+    REGOLE GENERALI
+***********************/
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* Stile testo generale */
+:root {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: linear-gradient(to right, #3cd2da, #ea8aed);
+  height: 100vh;
+  line-height: 1.5;
+}
+
+/*************************** 
+    CLASSI RIUTILIZZABILI
+****************************/
+
+/** Contenitori */
+
+/* Contenitore pagina */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/** Spaziature */
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+/***********
+    HEADER
+************/
+
+h1 {
+  font-size: 3.5rem;
+  margin: 30px;
+}
+
+/***********
+    FORM
+************/
+.container-form {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 30px 30px;
+  border: 3px solid rgb(67, 242, 255);
+}
+
+#author, #title, #body{
+  width: 100%;
+  height: 40px;
+  font-size: 1.1rem;
+  padding: 5px;
+}
+
+
+#body {
+  height: 100px;
+}
+
+form *:not(button) {
+  font-size: 1.1rem;
+  text-align: start;
+}
+
+button {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px;
+  padding: 12px 30px;
+  color: aliceblue;
+  border: white;
+  box-shadow: 5px 6px #61bdd7;
+  background-color: lch(50.52% 90.8 315.29);
+  cursor: pointer;
+
+}
+
